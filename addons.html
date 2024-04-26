@@ -31,14 +31,9 @@
         </div>
     </center>
 
+    <div id="output" class="addon-list">
 
-    <div class="addon-list" id="addon-list">
-        <div class="addon" id="addon-template" style="display: none;">
-            <h3 class="addon-name" id="addon-name"></h3>
-            <div class="addon-description" id="addon-description"></div>
-        </div>
     </div>
-    
     <br>
     <br>
     <br>
@@ -52,62 +47,49 @@
 
 </body>
 <script>
-    async function populateAddons() {
+    async function fetchJsonData() {
         try {
-            const addonList = document.getElementById('addon-list');
-
-            // Fetch JSON data from the server
-            const response = await fetch('static/json/addons.json');
-            const data = await response.json();
-
-            // Loop through each addon in the data object
-            for (const key in data) {
-                if (Object.hasOwnProperty.call(data, key)) {
-                    const addonData = data[key];
-
-                    // Clone the template .addon div
-                    const addonDiv = document.getElementById('addon-template').cloneNode(true);
-                    addonDiv.removeAttribute('id');
-                    addonDiv.style.display = 'block';
-
-                    // Populate addon name and description
-                    addonDiv.querySelector('.addon-name').innerText = addonData.name;
-                    addonDiv.querySelector('.addon-description').innerText = addonData.short_description;
-
-                    // Append the populated .addon div to the addonList container
-                    addonList.appendChild(addonDiv);
-                }
+            const response = await fetch('static/data/final_data.json');
+            if (!response.ok) {
+                throw new Error('Failed to fetch JSON');
             }
+            return await response.json();
         } catch (error) {
-            console.error('Error fetching JSON:', error);
+            console.error(error);
         }
     }
 
-    // Call the populateAddons function when the page loads
-    window.onload = populateAddons;
-
-    // Function to search addons
-    function searchAddons() {
-    const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const addons = document.querySelectorAll('.addon');
-
-    addons.forEach(addon => {
-        const addonName = addon.querySelector('.addon-name').innerText.toLowerCase();
-        const addonDescription = addon.querySelector('.addon-description').innerText.toLowerCase();
-
-        if (!searchInput || addonName.includes(searchInput) || addonDescription.includes(searchInput)) {
-            addon.style.display = 'block';
-        } else {
-            addon.style.display = 'none';
+    // Function to process JSON data and populate data boxes
+    async function processData() {
+        const jsonData = await fetchJsonData();
+        if (jsonData) {
+            const outputDiv = document.getElementById('output');
+            for (const key in jsonData) {
+                const addon = jsonData[key];
+                const addonElement = document.createElement('div');
+                addonElement.classList.add('addon'); // Add 'addon' class to the created div
+                addonElement.innerHTML = `
+                    <h3 class="addon-name">${addon.addon_name}</h3>
+                    <img height="100px" width="100px" src="${addon.addon_icon_url}" alt="${addon.addon_name}">
+                    <p class="addon-description">Downloads: ${addon.addon_downloads}</p>
+                    <p class="addon-description">Description: ${addon.addon_short_descriptions}</p>
+                    <p class="addon-description">Versions: ${addon.addon_versions.join(', ')}</p>
+                    <p class="addon-description">Categories: ${addon.addon_categories.join(', ')}</p>
+                    <p class="addon-description">Followers: ${addon.addon_followers}</p>
+                `;
+                outputDiv.appendChild(addonElement);
+            }
         }
-    });
-}
+    }
 
-    // Handle search when Enter key is pressed
-    document.getElementById('search-input').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            searchAddons();
-        }
-    });
+    // Call the processData function when the page loads
+    window.onload = processData;
+
+// Handle search when Enter key is pressed
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        searchAddons();
+    }
+});
 </script>
 </html>
