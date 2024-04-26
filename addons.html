@@ -47,6 +47,7 @@
 
 </body>
 <script>
+    // Function to fetch JSON data
     async function fetchJsonData() {
         try {
             const response = await fetch('static/data/final_data.json');
@@ -85,11 +86,27 @@
     // Call the processData function when the page loads
     window.onload = processData;
 
-// Handle search when Enter key is pressed
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        searchAddons();
+    // Function to handle addon search
+    function searchAddons() {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const addons = document.querySelectorAll('.addon');
+        addons.forEach(addon => {
+            const addonName = addon.querySelector('.addon-name').textContent.toLowerCase();
+            const addonDescription = addon.querySelector('.addon-description').textContent.toLowerCase();
+            if (addonName.includes(searchInput) || addonDescription.includes(searchInput)) {
+                addon.style.display = 'block'; // Show addon if it matches the search query
+            } else {
+                addon.style.display = 'none'; // Hide addon if it doesn't match the search query
+            }
+        });
     }
-});
+
+    // Handle search when Enter key is pressed
+    document.getElementById('search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            searchAddons();
+        }
+    });
 </script>
+
 </html>
