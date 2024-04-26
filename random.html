@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint - Download, Read, Explore</title>
+    <link rel="stylesheet" href="static/css/random.css">
+</head>
+<body>
+
+    <header class="top-bar" >
+        <a href="/">
+            <img src="static/logo.webp" height="40px" width="40px" alt="logo" class="top-bar-logo">
+            <a href="/" class="top-bar-name">Blueprint</a>
+            <a href="/addons.html" class="top-bar-addons">Discover Addons</a>
+            <a href="/news" class="top-bar-news">Addon News</a>
+            <a href="/random.html" class="top-bar-random">Random Addon</a>
+            <a href="/about" class="top-bar-about">About</a>
+        </a>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+    <h1 class="random-header">Here is your Random Addon! 🥳</h1>
+    <div class="random-addon";">
+        <img class="random-background" src="static/banner12.webp" alt="">
+        <img class="random-addon-logo" src="https://cdn.modrinth.com/data/USgVjXsk/e72a869a0f678f88ae2b819620525e4025ac987a.png" alt="">
+        <h3 class="random-addon-name">Create: The Factory Must Grow</h3>
+        <h4 class="random-addon-description">Heavy Engineering & Oil For The Create Mod</h4>
+    </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="bottom-bar">
+        <img src="static/logo.webp" alt="" class="bottom-bar-logo">
+        <h4 class="bottom-bar-sitename">Create Addons</h4>
+        <h6 class="bottom-bar-bug">Found a bug? Report it to blueprint-site@proton.me</h6>
+        <h6 class="bottom-bar-bug">NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</h6>
+    </div>
+</body>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+        });
+
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(confetti);
+
+            // Remove the confetti element after animation ends
+            confetti.addEventListener("animationend", function() {
+                confetti.remove();
+            });
+        }
+</script>
+</html>
