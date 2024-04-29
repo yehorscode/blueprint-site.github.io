@@ -26,8 +26,6 @@ jobs:
         include:
           - language: 'javascript-typescript'
             timeout: 360
-          - language: 'python'
-            timeout: 360
 
     steps:
     - name: Checkout repository
