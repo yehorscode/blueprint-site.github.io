@@ -24,11 +24,7 @@
     <br>
     <center>
     <h1 class="random-header">Here is your Random Addon! 🥳</h1>
-    <div class="random-addon";">
-        <img class="random-background" src="static/banner12.webp" alt="">
-        <img class="random-addon-logo" src="https://cdn.modrinth.com/data/USgVjXsk/e72a869a0f678f88ae2b819620525e4025ac987a.png" alt="">
-        <h3 class="random-addon-name">Create: The Factory Must Grow</h3>
-        <h4 class="random-addon-description">Heavy Engineering & Oil For The Create Mod</h4>
+    <div class="random-addon" id="random-addon">
     </div>
     </center>
     <br>
@@ -43,22 +39,25 @@
     </div>
 </body>
 <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            for (let i = 0; i < 100; i++) {
-                createConfetti();
-            }
-        });
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('static/data/final_data.json') // Fetch the JSON file
+        .then(response => response.json())
+        .then(data => {
+            const addonIds = Object.keys(data); // Get all addon IDs
+            const randomId = addonIds[Math.floor(Math.random() * addonIds.length)]; // Select a random addon ID
+            const randomAddon = data[randomId]; // Get the addon object by its ID
+            displayAddon(randomAddon); // Display the random addon
+        })
+        .catch(error => console.error('Error fetching addons:', error));
+    });
 
-        function createConfetti() {
-            const confetti = document.createElement("div");
-            confetti.classList.add("confetti");
-            confetti.style.left = Math.random() * 100 + "vw";
-            document.body.appendChild(confetti);
-
-            // Remove the confetti element after animation ends
-            confetti.addEventListener("animationend", function() {
-                confetti.remove();
-            });
-        }
+    function displayAddon(addon) {
+        const randomAddonDiv = document.getElementById('random-addon');
+        randomAddonDiv.innerHTML = `
+            <img class="random-addon-logo" src="${addon.addon_icon_url}" alt="">
+            <h3 class="random-addon-name">${addon.addon_name}</h3>
+            <h4 class="random-addon-description">${addon.addon_short_descriptions}</h4>
+        `;
+    }
 </script>
 </html>
