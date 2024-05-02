@@ -4,46 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blueprint - Explore Addons</title>
-        
-    <link rel="stylesheet" href="static/css/addons.css">
-</head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/css/addons.css">
+    </head>
 
-<body>
-    <header class="top-bar" >
-        <a href="/home">
-            <img src="static/logo.webp" height="40px" width="40px" alt="logo" class="top-bar-logo">
-            <a href="/" class="top-bar-name">Blueprint</a>
-            <a href="/addons.html" class="top-bar-addons">Discover Addons</a>
-            <a href="/news" class="top-bar-news">Addon News</a>
-            <a href="/random.html" class="top-bar-random">Random Addon</a>
-            <a href="/about" class="top-bar-about">About</a>
-        </a>
-    </header>
-    <br>
-    <br>
-    <br>
-    <br>
-    <center>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search addons..." class="search-input">
-            <button onclick="searchAddons()" class="search-button">Search</button>
-        </div>
-    </center>
+    <body>
+        <nav>
+            <a class="logo" href="/"><img src="/static/logo.webp" alt="Logo">Blueprint</a>
+            <span style="flex-grow: 1;"></span>
+            <a href="/addons.html"><img src="/static/minecart_coupling.webp" alt="">Addons</a>
+            <a href="/schematics.html"><img src="/static/schematic.webp" alt="">Schematics</a>
+            <a href="#" class="top-bar-about"><img src="/static/Clipboard.webp" alt="">About</a>
+        </nav>
+        <main>
+            <center>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search addons..." class="search-input">
+                    <button onclick="searchAddons()" class="search-button"><img src="/static/engineers_goggles.webp" alt="" width="60%"></button>
+                    <a href="/random.html">Random addon</a>
+                </div>
+            </center>
 
-    <div id="output" class="addon-list">
+            <div id="output" class="addon-list">
 
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="bottom-bar">
-        <img src="static/logo.webp" alt="" class="bottom-bar-logo">
-        <h4 class="bottom-bar-sitename">Create Addons</h4>
-        <h6 class="bottom-bar-bug">Found a bug? Report it to blueprint-site@proton.me</h6>
-        <h6 class="bottom-bar-bug">NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</h6>
-    </div>
-
-</body>
+            </div>
+            <footer>
+                <img src="static/logo.webp" alt="" class="bottom-bar-logo">
+                <h4 class="bottom-bar-sitename">Create Addons</h4>
+                <h6 class="bottom-bar-bug">Found a bug? Report it to blueprint-site@proton.me</h6>
+                <h6 class="bottom-bar-bug">NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</h6>
+            </footer>
+        </main>
+    </body>
 <script>
     // Function to fetch JSON data
     async function fetchJsonData() {
