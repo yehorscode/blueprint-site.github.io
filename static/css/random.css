@@ -15,7 +15,7 @@ body {
     z-index: 9999; 
 }
 .top-bar-logo {
-    margin-right: 10px;
+    margin-right: 0.7em;
     position: relative;
     border-radius: 50%; 
 }
@@ -23,8 +23,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: inherit;
     text-decoration: none;
-    margin-right: 30px;    
+    margin-right: 2em;    
     font-size: auto;
+    color: black;
 }
 .top-bar-news,
 .top-bar-random,
@@ -33,8 +34,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: inherit;
     text-decoration: none;
-    margin-right: 15px;    
+    margin-right: 1em;    
     font-size: auto;
+    color: black;
 }
 .random-addon {
     height: auto;
