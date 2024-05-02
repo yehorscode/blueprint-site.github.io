@@ -42,7 +42,7 @@ body {
     height: 4em;
     width: 100%;
     background-image: url("../twa_background.webp");
-    background-position: left center, right center; 
+    background-position: left center;
     background-color: #B3CAE5;
     position: relative;
     display: flex;
@@ -50,7 +50,6 @@ body {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     animation: moveBackground 18s linear infinite; 
-
 }
 @keyframes moveBackground {
     0% {
@@ -70,15 +69,18 @@ body {
     font-size: auto;
     padding-left: 0.5rem;
 }
-.twa-banner-description {
+.twa-banner-desc {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     color: black;
     text-decoration: none;
     margin-right: 30px;    
-    font-size: auto;
+    font-size: 0.8em;
     padding-left: 0.5rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px; 
 }
 .home-slideshow-container {
     display: flex;
