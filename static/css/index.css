@@ -42,14 +42,23 @@ body {
     height: 4em;
     width: 100%;
     background-image: url("../twa_background.webp");
-    background-size: auto;
-    background-position: center;
+    background-position: left center, right center; 
     background-color: #B3CAE5;
     position: relative;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: moveBackground 18s linear infinite; 
+
+}
+@keyframes moveBackground {
+    0% {
+        background-position: left; 
+    }
+    100% {
+        background-position: right; 
+    }
 }
 .twa-banner-text {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
