@@ -18,10 +18,10 @@
         </nav>
         <main>
             <center>
+                <p class="random-text">Feeling bored? <a href="/random.html">Get a random addon!</a></p>
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Search addons..." class="search-input">
                     <button onclick="searchAddons()" class="search-button"><img src="/static/engineers_goggles.webp" alt="" width="60%"></button>
-                    <a href="/random.html">Random addon</a>
                 </div>
             </center>
 
@@ -57,18 +57,24 @@
             const outputDiv = document.getElementById('output');
             for (const key in jsonData) {
                 const addon = jsonData[key];
+                let modloaders = "";
+                if (addon.addon_categories.includes("forge")) modloaders += `<a target="_blank" rel="noopener noreferrer" href="https://forums.minecraftforge.net"><img alt="Forge support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/forge_46h.png"></a>`;
+                if (addon.addon_categories.includes("neoforge")) modloaders += `<a target="_blank" rel="noopener noreferrer" href="https://neoforged.net"><img alt="NeoForge support" height="30" src="/static/neoforge_46h.png"></a>`;
+                if (addon.addon_categories.includes("fabric")) modloaders += `<a target="_blank" rel="noopener noreferrer" href="https://fabricmc.net"><img alt="Fabric support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/fabric_46h.png"></a>`;
+                if (addon.addon_categories.includes("quilt")) modloaders += `<a target="_blank" rel="noopener noreferrer" href="https://quiltmc.org"><img alt="Quilt support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/quilt_46h.png"></a>`;
                 const addonElement = document.createElement('div');
                 addonElement.classList.add('addon'); // Add 'addon' class to the created div
                 addonElement.innerHTML = `
                     <h3 class="addon-name">${addon.addon_name}</h3>
                     <img height="100px" width="100px" src="${addon.addon_icon_url}" alt="${addon.addon_name}">
-                    <p class="addon-description">Downloads: ${addon.addon_downloads}</p>
-                    <p class="addon-description">Description: ${addon.addon_short_descriptions}</p>
-                    <p class="addon-description">Versions: ${addon.addon_versions.join(', ')}</p>
-                    <p class="addon-description">Categories: ${addon.addon_categories.join(', ')}</p>
-                    <p class="addon-description">Followers: ${addon.addon_followers}</p>
-                    <p class="addon-description">Created By: ${addon.addon_authors}</p>
-                    <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/"+addon.addon_slug}">Download</a></p>
+                    <div class="modloaders">${modloaders}</div>
+                    <p class="addon-description"><b>Downloads:</b> ${addon.addon_downloads}</p>
+                    <p class="addon-description"><b>Description:</b> ${addon.addon_short_descriptions}</p>
+                    <p class="addon-description"><b>Versions:</b> ${addon.addon_versions.join(', ')}</p>
+                    <p class="addon-description"><b>Categories:</b> ${addon.addon_categories.join(', ')}</p>
+                    <p class="addon-description"><b>Followers:</b> ${addon.addon_followers}</p>
+                    <p class="addon-description"><b>Created by:</b> ${addon.addon_authors}</p>
+                    <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/"+addon.addon_slug}"><img alt="Download on Modrinth" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_46h.png"></a>
                 `;
                 outputDiv.appendChild(addonElement);
             }
