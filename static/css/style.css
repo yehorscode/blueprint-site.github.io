@@ -1,0 +1,102 @@
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
+body {
+    background-color: #E5E7EB;
+    margin: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    position: fixed;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    z-index: 9999;
+}
+
+nav img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+nav > a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: .5s all;
+}
+
+nav > a:hover {
+    background-color: #b3b2b2;
+}
+
+nav > a.logo {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Minecraftia', sans-serif;
+}
+
+nav > a img {
+    scale: 1;
+    transition: .5s all;
+}
+
+nav > a:hover img {
+    scale: 1.07;
+}
+
+main {
+    padding-top: 90px;
+    width: 100vw;
+}
+
+footer {
+    height: 8em;
+    margin-top: 40px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: left;
+    justify-content: center; /* Center elements horizontally */
+    align-self: center;
+    gap: 10px;
+    flex-direction: column; /* Align items vertically */
+    text-align: left;
+}
+
+.bottom-bar-sitename {
+    color: white;
+    position: inherit;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bottom-bar-logo {
+    margin-top: 1em;
+    width: 2em;
+    position: relative;
+    margin-left: 1em;
+    margin-bottom: -1em;
+}
+
+.bottom-bar-bug {
+    color: white;
+    position: inherit;
+    margin-left: 1.5em;
+    margin-top: -2.5em;
+    font-size: 0.7em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}

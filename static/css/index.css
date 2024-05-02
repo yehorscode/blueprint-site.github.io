@@ -1,45 +1,3 @@
-@import url('https://fonts.cdnfonts.com/css/minecraftia');
-body {
-    background-color: #E5E7EB;
-    margin: 0;
-}
-.top-bar {
-    position: fixed;
-    top: 0;
-    height: auto;
-    width: 100vw; 
-    background-color: white;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 10px 0; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-    z-index: 9999; 
-}
-.top-bar-logo {
-    margin-right: 0.7em;
-    position: relative;
-    border-radius: 50%; 
-}
-.top-bar-name {
-    font-family: Arial, Helvetica, sans-serif;
-    color: inherit;
-    text-decoration: none;
-    margin-right: 2em;    
-    font-size: auto;
-    color: black;
-}
-.top-bar-news,
-.top-bar-random,
-.top-bar-about,
-.top-bar-addons {
-    font-family: Arial, Helvetica, sans-serif;
-    color: inherit;
-    text-decoration: none;
-    margin-right: 1em;    
-    font-size: auto;
-    color: black;
-}
 .twa-banner {
     height: 4em;
     width: 100%;
@@ -61,6 +19,10 @@ body {
         background-position: right; 
     }
 }
+.twa-banner-text * {
+    font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
+}
+
 .twa-banner-text {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -72,11 +34,13 @@ body {
     padding-left: 0.5rem;
     text-shadow: rgb(0, 0, 0, 0.4) 3px 3px 10px;
 }
+
 .home-slideshow-container {
     display: flex;
     align-items: top; 
     justify-content: center; 
 }
+
 .home-slideshow-image {
     width: 40vw;
     height: 24vw;
@@ -84,12 +48,15 @@ body {
     border-radius: 1.9em;
     transition: opacity 0.5s linear;
 }
+
 .home-slideshow-image.hidden {
     opacity: 0.4; 
 }
+
 .home-slideshow-image.visible {
     opacity: 1; 
 }
+
 .side-box {
     width: 20vw;
     height: auto; 
@@ -109,23 +76,28 @@ body {
     transition: filter 0.3s linear;
     transition: box-shadow 0.2s linear;
 }
+
 .side-box:hover {
     filter: brightness(1.05);
 }
+
 .side-box img {
     max-height: 200px;
     height: 7vw;
     max-width: 200px;
     position: relative;
 }
+
 .side-box-text {
     font-size: 1.5vw;
 }
+
 .side-box-dsc {
     margin-top: -1vw;
     font-size: 1.3vw;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .discover-addons-line {
     height: 2px;
     width: 100%;
@@ -136,15 +108,18 @@ body {
     right: 0;
     z-index: 1;
 }
+
 .home-discover-addons {
     margin-top: -5px;
     text-align: center;
     position: relative;
 }
+
 .home-discover-addons-text {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
 }
+
 .addon-list {
     display: grid;
     grid-template-columns: 0.3fr 0.3fr 0.3fr;
@@ -171,9 +146,11 @@ body {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     transition: box-shadow 0.2s linear;
 }
+
 .addon:hover {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
 }
+
 .addon::before {
     content: ""; 
     position: absolute;
@@ -247,41 +224,4 @@ body {
 .h4-blueprint {
     color: black;
     font-size: 1em;
-}
-
-.bottom-bar {
-    height: 8em;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: left;
-    justify-content: center; /* Center elements horizontally */
-    align-self: center;
-    gap: 10px;
-    flex-direction: column; /* Align items vertically */
-    text-align: left;
-}
-.bottom-bar-sitename {
-    color: white;
-    position: inherit;
-    margin-left: 1em;
-    margin-top: 1em;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.bottom-bar-logo {
-    margin-top: 1em;
-    width: 2em;
-    position: relative;
-    margin-left: 1em;
-    margin-bottom: -1em;
-}
-.bottom-bar-bug {
-    color: white;
-    position: inherit;
-    margin-left: 1.5em;
-    margin-top: -2.5em;
-    font-size: 0.7em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
 }
