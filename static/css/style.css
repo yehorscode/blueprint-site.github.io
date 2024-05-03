@@ -140,8 +140,8 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 15px;
     background-color: #527caf;
     display: flex;
@@ -150,12 +150,39 @@ footer {
     z-index: 9998;
 }
 
+#dark-mode-toggle:hover {
+    height: 150px;
+}
+
+#dark-mode-toggle span {
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0px;
+}
+
+#dark-mode-toggle:hover span {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+}
+
 #dark-mode-toggle::after {
     content: '';
-    width: 100%;
-    height: 100%;
+    width: 120px;
+    height: 120px;
     background-image: url("https://media.discordapp.net/attachments/1235623703228715039/1235953730742915174/dark_mode.webp?ex=66363f1c&is=6634ed9c&hm=c5c6d65efa12768610dcbc7598d76dc1f5f6c85ac3836e3cafc938f9f500d91d&=&format=webp&width=468&height=468");
     background-size: cover;
+    position: absolute;
+    bottom: 0;
+    transition: all .5s;
+}
+
+#dark-mode-toggle:hover::after {
+    scale: 1.2;
 }
 
 .dark-mode #dark-mode-toggle::after {
