@@ -1,3 +1,6 @@
+body.dark-mode h1 {
+    color: white;
+}
 .random-addon {
     height: auto;
     width: 40em;
@@ -46,17 +49,4 @@
 }
 .modloaders a {
     margin: 3px;
-}
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background-color: #f00; /* You can adjust the color */
-    animation: confetti-fall linear 4s infinite;
-    pointer-events: none;
-}
-
-@keyframes confetti-fall {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh) rotate(360deg); }
 }

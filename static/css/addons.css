@@ -1,6 +1,9 @@
-.dark-mode {
+body.dark-mode {
     background-color: black;
     color: white;
+}
+body.dark-mode .random-text{
+
 }
 .addon-list {
     display: grid;
@@ -215,6 +218,7 @@
     border-radius: 1em;
     box-shadow: 3px 2px 5px rgb(0, 0, 0, 0.5);
 }
+
   
 .select-dropdown:focus-within {
     box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
@@ -274,4 +278,16 @@
     opacity: 1;
     visibility: visible;
     transform: scaleY(1);
+}
+.modrinth-download {
+    transition: 0.2s linear;
+}
+.modrinth-download:hover {
+    box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 10px;
+}
+.addon {
+    transition: 0.2s linear;
+}
+.addon:hover {
+    background-color: #a4c2e4;
 }

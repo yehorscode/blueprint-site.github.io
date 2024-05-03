@@ -25,6 +25,7 @@
         <a href="#"><img src="/static/Clipboard.webp" alt="">About</a>
     </nav>
     <main>
+        <div id="dark-mode-toggle"></div>
         <center>
             <h1>Schematic Viewer</h1>
             <input id="schematic-input" type="file" style="position: fixed; top: -100em">
@@ -112,7 +113,17 @@
             document.querySelector(".drop-zone").style.display = "none";
             document.querySelector("table").style.visibility = "visible";
         }
-        
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+    window.addEventListener('load', function() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+    });
     </script>
 </body>
 </html>

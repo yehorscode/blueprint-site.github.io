@@ -26,6 +26,7 @@
             <a href="/about.html"><img src="/static/Clipboard.webp" alt="">About</a>
         </nav>
         <main>
+            <div id="dark-mode-toggle"></div>
             <center>
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Search addons..." class="search-input">
@@ -147,7 +148,7 @@
                     <p class="addon-description"><b>Categories:</b> ${addon.addon_categories.join(', ')}</p>
                     <p class="addon-description"><b>Followers:</b> ${addon.addon_followers}</p>
                     <p class="addon-description"><b>Created by:</b> ${addon.addon_authors}</p>
-                    <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/"+addon.addon_slug}"><img alt="Download on Modrinth" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_46h.png"></a>
+                    <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/"+addon.addon_slug}"><img class="modrinth-download" alt="Download on Modrinth" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_46h.png"></a>
                 `;
                 outputDiv.appendChild(addonElement);
             }

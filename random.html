@@ -17,6 +17,7 @@
     <meta property="og:image" content="https://blueprint-site.github.io/static/logo.webp" />
 </head>
 <body>
+    <div id="dark-mode-toggle"></div>
     <nav>
         <a class="logo" href="/"><img src="/static/logo.webp" alt="Logo">Blueprint</a>
         <span style="flex-grow: 1;"></span>
@@ -69,5 +70,16 @@
             </center>
         `;
     }
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+    window.addEventListener('load', function() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+    });
 </script>
 </html>

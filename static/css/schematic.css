@@ -1,3 +1,6 @@
+body.dark-mode p {
+    color: black;
+}
 .viewer-text {
     padding: 10px;
     padding-left: 30px;

@@ -20,38 +20,38 @@
     }
 }
 
-.dark-mode {
-    .side-box h3, h4 {
+
+body.dark-mode .side-box h3, h4 {
         color: white;
     }
-    .side-box {
+body.dark-mode .side-box {
         background-color: #527caf;
     }
-    .discover-addons-background {
+body.dark-mode .discover-addons-background {
         background-color: #527caf;
     }
-    .discover-addons-line {
+body.dark-mode .discover-addons-line {
         background-color: #527caf;
     }
-    .home-more-addons-button {
+body.dark-mode .home-more-addons-button {
         background-color: #B3CAE5;
     }
-    .more-addons-inside-text {
+body.dark-mode .more-addons-inside-text {
         color: black;
     }
-    .site-info {
+body.dark-mode .site-info {
         background-color: #527caf;
     }
-    .site-info h2, h3, h4{
+body.dark-mode .site-info h2, h3, h4{
         color: whitesmoke;
     }
-    .blogpost:link {
+body.dark-mode .blogpost:link {
         color: rgb(177, 211, 255);
     }
-    .blogpost:visited {
+body.dark-mode.blogpost:visited {
         color: rgb(177, 211, 255);
     }
-}
+
 .twa-banner-text * {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
 }

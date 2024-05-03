@@ -25,6 +25,7 @@
         <a href="/about.html"><img src="/static/Clipboard.webp" alt="">About</a>
     </nav>
     <main>
+        <div id="dark-mode-toggle"></div>
         <center>
             <h1>Schematics</h1>
             <p class="viewer-text">Got an schematic? <a href="/schematic-viewer.html">View it here.</a></p>
@@ -36,5 +37,18 @@
             <h6 class="bottom-bar-bug">NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</h6>
         </footer>
     </main>
+    <script>
+                const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+    window.addEventListener('load', function() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
+    });
+    </script>
 </body>
 </html>
