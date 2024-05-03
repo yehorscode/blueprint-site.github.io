@@ -23,7 +23,7 @@
             <span style="flex-grow: 1;"></span>
             <a href="/addons.html"><img src="/static/minecart_coupling.webp" alt="">Addons</a>
             <a href="/schematics.html"><img src="/static/schematic.webp" alt="">Schematics</a>
-            <a href="#"><img src="/static/Clipboard.webp" alt="">About</a>
+            <a href="/about.html"><img src="/static/Clipboard.webp" alt="">About</a>
         </nav>
         <main>
             <center>
@@ -291,6 +291,17 @@
 
         option.addEventListener("keyup", versionHandler);
         option.addEventListener("click", versionHandler);
+    });
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+    window.addEventListener('load', function() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+    }
     });
 </script>
 </html>
