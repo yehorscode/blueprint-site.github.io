@@ -131,7 +131,7 @@
                 
                 let versions = "";
                 for (const version of addon.addon_versions) {
-                    versions += `<span class="addon-version supports-${version.replace(".", "_")}"">${version}</span>`;
+                    versions += `<span class="addon-version supports-${version.replaceAll(".", "_")}"">${version}</span>`;
                     if (!versionsArray.includes(version)) versionsArray.push(version);
                 }
 
@@ -155,12 +155,13 @@
             for (const version of versionsArray.sort().reverse()) {
                 const versionElement = document.createElement("li");
                 versionElement.innerHTML = `
-                    <input type="radio" id="${version.replace(".", "_")}" name="version" />
-                    <label for="${version.replace(".", "_")}">${version}</label>
+                    <input type="radio" id="${version.replaceAll(".", "_")}" name="version" />
+                    <label for="${version.replaceAll(".", "_")}">${version}</label>
                 `;
 
                 function versionHandler(e) {
                     versionSelection = this.children[0].id;
+                    console.log(this.children[0].id);
                     // Click Events
                     if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
                         versionSelectedValue.textContent = this.children[1].textContent;
@@ -231,6 +232,8 @@
     loaderOptionsList.forEach((option) => {
         function loaderHandler(e) {
             loaderSelection = this.children[0].id;
+            console.log(this.children[0].id);
+            
             // Click Events
             if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
                 loaderSelectedValue.textContent = this.children[1].textContent;
@@ -271,6 +274,8 @@
     versionOptionsList.forEach((option) => {
         function versionHandler(e) {
             versionSelection = this.children[0].id;
+            console.log(this.children[0].id);
+
             // Click Events
             if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
                 versionSelectedValue.textContent = this.children[1].textContent;
