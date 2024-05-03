@@ -147,7 +147,7 @@
                 outputDiv.appendChild(addonElement);
             }
 
-            for (const version of versionsArray.sort()) {
+            for (const version of versionsArray.sort().reverse()) {
                 const versionElement = document.createElement("li");
                 versionElement.innerHTML = `
                     <input type="radio" id="${version.replace(".", "_")}" name="version" />
