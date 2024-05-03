@@ -27,6 +27,9 @@ body.dark-mode .side-box h3, h4 {
 body.dark-mode .side-box {
         background-color: #527caf;
     }
+body.dark-mode .side-box-dsc {
+        color: white;
+    }
 body.dark-mode .discover-addons-background {
         background-color: #527caf;
     }
@@ -51,6 +54,12 @@ body.dark-mode .blogpost:link {
 body.dark-mode.blogpost:visited {
         color: rgb(177, 211, 255);
     }
+body.dark-mode .h3-blueprint, .h4-blueprint, .h2-blueprint {
+    color: white;
+}
+body.dark-mode .site-info h4 {
+    color: white;
+}
 
 .twa-banner-text * {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
@@ -123,12 +132,14 @@ body.dark-mode.blogpost:visited {
 
 .side-box-text {
     font-size: 1.5vw;
+    color: black;
 }
 
 .side-box-dsc {
     margin-top: -1vw;
     font-size: 1.3vw;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 
 .discover-addons-line {
