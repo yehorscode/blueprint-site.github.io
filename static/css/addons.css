@@ -3,8 +3,45 @@ body.dark-mode {
     color: white;
 }
 body.dark-mode .random-text{
-
+    color: black;
 }
+body.dark-mode .addon {
+    background-color: #527caf;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
+    color: white;
+}
+body.dark-mode .addon-name {
+    color: white;
+}
+body.dark-mode .addon-description {
+    color: white;
+}
+body.dark-mode .addon-version {
+    color: white;
+}
+body.dark-mode .addon-loader {
+    color: white;
+}
+body.dark-mode .addon-author {
+    color: white;
+}
+body.dark-mode .addon-rating {
+    color: white;
+}
+body.dark-mode input {
+    background-color: #527caf;
+}
+body.dark-mode .select-button {
+    background-color: #527caf;
+}
+body.dark-mode p {
+    background-color: #527caf;
+}
+body.dark-mode .search-button {
+    background-color: #527caf;
+}
+
+
 .addon-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted grid layout */
