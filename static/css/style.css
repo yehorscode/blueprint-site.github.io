@@ -1,9 +1,27 @@
 @import url('https://fonts.cdnfonts.com/css/minecraftia');
+
 body {
     background-color: #E5E7EB;
     margin: 0;
 }
-
+.dark-mode {
+    background-color: black;
+    color: white; /* Set text color to white for better readability */
+    nav {
+        background-color: black;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+    }
+    nav > a:hover, nav > button:hover {
+        background-color: #4e4e4e;
+    }
+    nav a {
+        color: white;
+    }
+    nav > button {
+        color: white;
+        background-color: black;
+    }
+}
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -33,11 +51,26 @@ nav > a {
     text-decoration: none;
     color: black;
     font-size: 17px;
-    transition: .5s all;
+    transition: .1s all;
+}
+nav > button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: .1s all;
+    background-color: white; 
+    border: none;
 }
 
-nav > a:hover {
-    background-color: #b3b2b2;
+nav > a:hover, 
+nav > button:hover {
+    background-color: #cecece;
 }
 
 nav > a.logo {
@@ -61,7 +94,7 @@ main {
 }
 
 footer {
-    height: 8em;
+    height: auto;
     margin-top: 40px;
     width: 100%;
     background-color: black;

@@ -19,6 +19,38 @@
         background-position: right; 
     }
 }
+.dark-mode {
+    .side-box h3, h4 {
+        color: white;
+    }
+    .side-box {
+        background-color: #527caf;
+    }
+    .discover-addons-background {
+        background-color: #527caf;
+    }
+    .discover-addons-line {
+        background-color: #527caf;
+    }
+    .home-more-addons-button {
+        background-color: #B3CAE5;
+    }
+    .more-addons-inside-text {
+        color: black;
+    }
+    .site-info {
+        background-color: #527caf;
+    }
+    .site-info h2, h3, h4{
+        color: whitesmoke;
+    }
+    .blogpost:link {
+        color: rgb(177, 211, 255);
+    }
+    .blogpost:visited {
+        color: rgb(177, 211, 255);
+    }
+}
 .twa-banner-text * {
     font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
 }
@@ -146,7 +178,12 @@
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     transition: box-shadow 0.2s linear;
 }
-
+.blogpost:link {
+    color: rgb(49, 79, 117);
+}
+.blogpost:visited {
+    color: rgb(49, 79, 117);
+}
 .addon:hover {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
 }
@@ -192,7 +229,7 @@
     background-color: #3e76b3;
     color: white;
     text-decoration: none;
-    border-radius: 1.9em;
+    border-radius: 0.4em;
     font-size: 1.2em;
     transition: 0.2s ease;
 }
