@@ -15,6 +15,7 @@
     <meta property="og:description" content="Your all in one Create website" />
     <meta property="og:url" content="https://blueprint-site.github.io/" />
     <meta property="og:image" content="https://blueprint-site.github.io/static/logo.webp" />
+    <script src="/static/js/darkmode.js" defer></script>
 </head>
 <body>
     <nav>
@@ -37,22 +38,5 @@
             <h6 class="bottom-bar-bug">NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</h6>
         </footer>
     </main>
-    <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            window.localStorage.setItem('darkmode', body.classList.contains('dark-mode'));
-        });
-        window.addEventListener('load', function() {
-        if (window.localStorage.getItem("darkmode")) {
-            if (window.localStorage.getItem("darkmode") == true) document.body.classList.add('dark-mode');
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark-mode');
-            window.localStorage.setItem('darkmode', true);
-        }
-    });
-    </script>
 </body>
 </html>
