@@ -234,11 +234,17 @@
 
     darkModeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
+        window.localStorage.setItem('darkmode', body.classList.contains('dark-mode'));
     });
     window.addEventListener('load', function() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark-mode');
-    }
+        if (window.localStorage.getItem("darkmode")) {
+            window.localStorage.getItem("darkmode") ? document.body.classList.add('dark-mode') : null;
+            return;
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+            window.localStorage.setItem('darkmode', true);
+        }
     });
 </script>
 

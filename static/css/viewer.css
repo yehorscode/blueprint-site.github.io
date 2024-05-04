@@ -1,3 +1,12 @@
+:root {
+    --main-background: #E5E7EB;
+    --dark-main-background: black;
+    --text-color: white;
+    --dark-text-color: black;
+    --container-background: #B3CAE5;
+    --dark-container-background: #527caf;
+}
+
 .drop-zone {
     width: 400px;
     height: 200px;
@@ -6,7 +15,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
     border-radius: 20px;
 }
@@ -28,7 +37,7 @@ caption {
   
 thead,
 tfoot {
-    background-color: rgb(228 240 245);
+    background-color: var(--container-background);
 }
   
 th,
@@ -42,7 +51,7 @@ td:last-of-type {
 }
   
 tbody > tr:nth-of-type(even) {
-    background-color: rgb(237 238 242);
+    background-color: var(--container-background);
 }
   
 tfoot th {
@@ -51,4 +60,17 @@ tfoot th {
 
 tfoot td {
     font-weight: bold;
+}
+
+body.dark-mode .drop-zone {
+    background-color: var(--dark-container-background);
+}
+
+thead,
+tfoot {
+    background-color: var(--dark-container-background);
+}
+
+tbody > tr:nth-of-type(even) {
+    background-color: var(--dark-container-background);
 }

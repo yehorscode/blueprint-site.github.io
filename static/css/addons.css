@@ -1,46 +1,57 @@
-body.dark-mode {
-    background-color: black;
-    color: white;
-}
-body.dark-mode .random-text{
-    color: black;
-}
-body.dark-mode .addon {
-    background-color: #527caf;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
-    color: white;
-}
-body.dark-mode .addon-name {
-    color: white;
-}
-body.dark-mode .addon-description {
-    color: white;
-}
-body.dark-mode .addon-version {
-    color: white;
-}
-body.dark-mode .addon-loader {
-    color: white;
-}
-body.dark-mode .addon-author {
-    color: white;
-}
-body.dark-mode .addon-rating {
-    color: white;
-}
-body.dark-mode input {
-    background-color: #527caf;
-}
-body.dark-mode .select-button {
-    background-color: #527caf;
-}
-body.dark-mode p {
-    background-color: #527caf;
-}
-body.dark-mode .search-button {
-    background-color: #527caf;
+:root {
+    --main-background: #E5E7EB;
+    --dark-main-background: black;
+    --text-color: white;
+    --dark-text-color: black;
+    --container-background: #B3CAE5;
+    --dark-container-background: #527caf;
 }
 
+body.dark-mode {
+    background-color: var(--dark-main-background);
+    color: var(--text-color);
+}
+body.dark-mode .random-text{
+    color: var(--dark-text-color);
+}
+body.dark-mode .addon {
+    background-color: var(--dark-container-background);
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+body.dark-mode .addon-name {
+    color: var(--text-color);
+}
+body.dark-mode .addon-description {
+    color: var(--text-color);
+}
+body.dark-mode .addon-version {
+    color: var(--text-color);
+}
+body.dark-mode .addon-loader {
+    color: var(--text-color);
+}
+body.dark-mode .addon-author {
+    color: var(--text-color);
+}
+body.dark-mode .addon-rating {
+    color: var(--text-color);
+}
+body.dark-mode input {
+    background-color: var(--dark-container-background);
+}
+body.dark-mode .select-button {
+    background-color: var(--dark-container-background);
+}
+body.dark-mode p {
+    background-color: var(--dark-container-background);
+}
+body.dark-mode .search-button {
+    background-color: var(--dark-container-background);
+}
+body.dark-mode .select-dropdown {
+    background-color: var(--dark-container-background);
+}
 
 .addon-list {
     display: grid;
@@ -64,11 +75,11 @@ body.dark-mode .search-button {
     flex-direction: column; /* Stack child elements vertically */
     text-align: left;
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
 }
 
 .addon-name {
-    color: rgb(0, 0, 0);
+    color: var(--dark-text-color);
     font-family: Arial, Helvetica, sans-serif;
     position: relative; /* Ensure text appears above the pseudo-element */
     z-index: 1; /* Ensure text is on top of the pseudo-element */
@@ -101,14 +112,16 @@ body.dark-mode .search-button {
     background-color: rgb(85, 85, 255);
     border: .5px solid blue;
     border-radius: 6px;
-    color: white;
+    color: var(--text-color);
     padding: 3px;
     font-size: 13px;
     margin: 2px;
+    width: auto;
+    white-space: nowrap;
 }
 
 .addon-description {
-    color: black;
+    color: var(--dark-text-color);
     font-family: Arial, Helvetica, sans-serif;
     position: relative; /* Ensure text appears above the pseudo-element */
     z-index: 1; /* Ensure text is on top of the pseudo-element */
@@ -122,7 +135,7 @@ body.dark-mode .search-button {
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     width: fit-content;
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -136,7 +149,7 @@ body.dark-mode .search-button {
 }
 
 .search-input {
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     padding-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 1.9em;
@@ -149,7 +162,7 @@ body.dark-mode .search-button {
 
 .search-button {
     font-size: 1.5vw;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     border: none;
     border-radius: 1.9em;
     height: 3vw;
@@ -166,7 +179,7 @@ body.dark-mode .search-button {
 
 .search-bar a {
     font-size: 1.5vw;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     border: none;
     border-radius: 1.9em;
     height: 3vw;
@@ -186,7 +199,7 @@ body.dark-mode .search-button {
 .search-container {
     width: 10vw;
     height: 2vw;
-    background-color: black;
+    background-color: var(--dark-main-background);
     display: flex;
 }
 
@@ -218,7 +231,7 @@ body.dark-mode .search-button {
     justify-content: space-between;
     align-items: center;
 
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     border: none;
     border-radius: 1.9em;
     height: 3vw;
@@ -250,7 +263,7 @@ body.dark-mode .search-button {
     opacity: 0;
     visibility: hidden;
 
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     border: none;
     border-radius: 1em;
     box-shadow: 3px 2px 5px rgb(0, 0, 0, 0.5);
