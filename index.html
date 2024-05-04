@@ -238,10 +238,8 @@
     });
     window.addEventListener('load', function() {
         if (window.localStorage.getItem("darkmode")) {
-            window.localStorage.getItem("darkmode") ? document.body.classList.add('dark-mode') : null;
-            return;
-        }
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (window.localStorage.getItem("darkmode") == true) document.body.classList.add('dark-mode');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add('dark-mode');
             window.localStorage.setItem('darkmode', true);
         }
