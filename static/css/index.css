@@ -1,9 +1,18 @@
+:root {
+    --main-background: #E5E7EB;
+    --dark-main-background: black;
+    --text-color: white;
+    --dark-text-color: black;
+    --container-background: #B3CAE5;
+    --dark-container-background: #527caf;
+}
+
 .twa-banner {
     height: 4em;
     width: 100%;
     background-image: url("../twa_background.webp");
     background-position: left center;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     position: relative;
     display: flex;
     justify-content: center;
@@ -25,25 +34,25 @@ body.dark-mode .side-box h3, h4 {
         color: white;
     }
 body.dark-mode .side-box {
-        background-color: #527caf;
+        background-color: var(--dark-container-background);
     }
 body.dark-mode .side-box-dsc {
         color: white;
     }
 body.dark-mode .discover-addons-background {
-        background-color: #527caf;
+        background-color: var(--dark-container-background);
     }
 body.dark-mode .discover-addons-line {
-        background-color: #527caf;
+        background-color: var(--dark-container-background);
     }
 body.dark-mode .home-more-addons-button {
-        background-color: #B3CAE5;
+        background-color: var(--container-background);
     }
 body.dark-mode .more-addons-inside-text {
         color: black;
     }
 body.dark-mode .site-info {
-        background-color: #527caf;
+        background-color: var(--dark-container-background);
     }
 body.dark-mode .site-info h2, h3, h4{
         color: whitesmoke;
@@ -108,7 +117,7 @@ body.dark-mode .site-info h4 {
     align-items: center; 
     position: relative;
     border-radius: 1.9em;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     text-align: center;
     vertical-align: sub; 
     margin-left: 1em; 
@@ -145,7 +154,7 @@ body.dark-mode .site-info h4 {
 .discover-addons-line {
     height: 2px;
     width: 100%;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     position: relative;
     opacity: 0.5;
     left: 0;
@@ -255,12 +264,12 @@ body.dark-mode .site-info h4 {
     font-family: Arial, Helvetica, sans-serif;
 }
 .discover-addons-background {
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
 }
 .site-info {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
 }
 .h2-blueprint {
     color: black;
