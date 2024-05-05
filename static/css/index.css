@@ -1,60 +1,113 @@
-body {
-    background-color: #E5E7EB;
-    margin: 0;
+:root {
+    --main-background: #E5E7EB;
+    --dark-main-background: black;
+    --text-color: white;
+    --dark-text-color: black;
+    --container-background: #B3CAE5;
+    --dark-container-background: #527caf;
 }
-.top-bar {
-    position: fixed;
-    top: 0;
-    height: auto;
-    width: 100vw; 
-    background-color: white;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 10px 0; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-    z-index: 9999; 
-}
-.top-bar-logo {
-    margin-right: 10px;
+
+.twa-banner {
+    height: 4em;
+    width: 100%;
+    background-image: url("../twa_background.webp");
+    background-position: left center;
+    background-color: var(--container-background);
     position: relative;
-    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: moveBackground 18s linear infinite; 
 }
-.top-bar-name {
-    font-family: Arial, Helvetica, sans-serif;
-    color: inherit;
+@keyframes moveBackground {
+    0% {
+        background-position: left; 
+    }
+    100% {
+        background-position: right; 
+    }
+}
+
+
+body.dark-mode .side-box h3, h4 {
+        color: white;
+    }
+body.dark-mode .side-box {
+        background-color: var(--dark-container-background);
+    }
+body.dark-mode .side-box-dsc {
+        color: white;
+    }
+body.dark-mode .discover-addons-background {
+        background-color: var(--dark-container-background);
+    }
+body.dark-mode .discover-addons-line {
+        background-color: var(--dark-container-background);
+    }
+body.dark-mode .home-more-addons-button {
+        background-color: var(--container-background);
+    }
+body.dark-mode .more-addons-inside-text {
+        color: black;
+    }
+body.dark-mode .site-info {
+        background-color: var(--dark-container-background);
+    }
+body.dark-mode .site-info h2, h3, h4{
+        color: whitesmoke;
+    }
+body.dark-mode .blogpost:link {
+        color: rgb(177, 211, 255);
+    }
+body.dark-mode.blogpost:visited {
+        color: rgb(177, 211, 255);
+    }
+body.dark-mode .h3-blueprint, .h4-blueprint, .h2-blueprint {
+    color: white;
+}
+body.dark-mode .site-info h4 {
+    color: white;
+}
+
+.twa-banner-text * {
+    font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
+}
+
+.twa-banner-text {
+    font-family: 'Minecraftia', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal; 
+    color: black;
     text-decoration: none;
     margin-right: 30px;    
     font-size: auto;
+    padding-left: 0.5rem;
+    text-shadow: rgb(0, 0, 0, 0.4) 3px 3px 10px;
 }
-.top-bar-news,
-.top-bar-random,
-.top-bar-about,
-.top-bar-addons {
-    font-family: Arial, Helvetica, sans-serif;
-    color: inherit;
-    text-decoration: none;
-    margin-right: 15px;    
-    font-size: auto;
-}
+
 .home-slideshow-container {
     display: flex;
     align-items: top; 
     justify-content: center; 
 }
+
 .home-slideshow-image {
-    width: 50vw;
-    height: 28vw;
+    width: 40vw;
+    height: 24vw;
     position: relative;
     border-radius: 1.9em;
     transition: opacity 0.5s linear;
 }
+
 .home-slideshow-image.hidden {
     opacity: 0.4; 
 }
+
 .home-slideshow-image.visible {
     opacity: 1; 
 }
+
 .side-box {
     width: 20vw;
     height: auto; 
@@ -64,7 +117,7 @@ body {
     align-items: center; 
     position: relative;
     border-radius: 1.9em;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     text-align: center;
     vertical-align: sub; 
     margin-left: 1em; 
@@ -74,61 +127,67 @@ body {
     transition: filter 0.3s linear;
     transition: box-shadow 0.2s linear;
 }
+
 .side-box:hover {
     filter: brightness(1.05);
 }
+
 .side-box img {
     max-height: 200px;
     height: 7vw;
     max-width: 200px;
     position: relative;
 }
+
 .side-box-text {
     font-size: 1.5vw;
+    color: black;
 }
+
 .side-box-dsc {
     margin-top: -1vw;
     font-size: 1.3vw;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
+
 .discover-addons-line {
     height: 2px;
     width: 100%;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
     position: relative;
     opacity: 0.5;
     left: 0;
     right: 0;
     z-index: 1;
 }
+
 .home-discover-addons {
     margin-top: -5px;
     text-align: center;
     position: relative;
 }
+
 .home-discover-addons-text {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3vw;
+    font-size: 2rem;
 }
+
 .addon-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr)); 
-    gap: 1vw;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr;
+    grid-gap: 20px;
     margin: 20px auto; 
-    margin-left: 8vw;
-    margin-right: 5vw;
     padding: 0; 
     justify-content: center;
     max-width: 80vw;
     align-content: center;
-    margin-right: 20px;
-
 }
 
 .addon {
-    width: 18vw;
+    width: auto;
     height: auto;
-    border-radius: 1.9em;
+    border-radius: 2em;
     padding: 20px;
     background-size: cover; 
     background-position: center; 
@@ -140,9 +199,16 @@ body {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     transition: box-shadow 0.2s linear;
 }
+.blogpost:link {
+    color: rgb(49, 79, 117);
+}
+.blogpost:visited {
+    color: rgb(49, 79, 117);
+}
 .addon:hover {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
 }
+
 .addon::before {
     content: ""; 
     position: absolute;
@@ -184,7 +250,7 @@ body {
     background-color: #3e76b3;
     color: white;
     text-decoration: none;
-    border-radius: 1.9em;
+    border-radius: 0.4em;
     font-size: 1.2em;
     transition: 0.2s ease;
 }
@@ -198,12 +264,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .discover-addons-background {
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
 }
 .site-info {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #B3CAE5;
+    background-color: var(--container-background);
 }
 .h2-blueprint {
     color: black;
@@ -216,41 +282,4 @@ body {
 .h4-blueprint {
     color: black;
     font-size: 1em;
-}
-
-.bottom-bar {
-    height: 8em;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: left;
-    justify-content: center; /* Center elements horizontally */
-    align-self: center;
-    gap: 10px;
-    flex-direction: column; /* Align items vertically */
-    text-align: left;
-}
-.bottom-bar-sitename {
-    color: white;
-    position: inherit;
-    margin-left: 1em;
-    margin-top: 1em;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.bottom-bar-logo {
-    margin-top: 1em;
-    width: 2em;
-    position: relative;
-    margin-left: 1em;
-    margin-bottom: -1em;
-}
-.bottom-bar-bug {
-    color: white;
-    position: inherit;
-    margin-left: 1.5em;
-    margin-top: -2.5em;
-    font-size: 0.7em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
 }
