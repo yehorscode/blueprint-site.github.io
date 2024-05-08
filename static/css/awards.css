@@ -1,8 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/minecraftia');
+
 body {
     background-color: black;
     margin: 0;
 }
+
 .title {
     color: white;
     font-family: "Minecraftia", Arial, Helvetica, sans-serif;
@@ -10,6 +12,7 @@ body {
     font-size: 3em;
     text-align: center;
 }
+
 .title-description {
     color: white;
     font-family: "Minecraftia", Arial, Helvetica, sans-serif;

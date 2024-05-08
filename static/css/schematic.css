@@ -1,6 +1,7 @@
 body.dark-mode p {
     color: black;
 }
+
 .viewer-text {
     padding: 10px;
     padding-left: 30px;
@@ -11,4 +12,3 @@ body.dark-mode p {
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
     border-radius: 5px;
 }
-
