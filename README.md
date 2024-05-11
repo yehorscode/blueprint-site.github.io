@@ -6,3 +6,9 @@ We scan the mod sites (Modrinth and Curseforge) for Create Mod addons and then p
 
 ### What's the website link?
 You can find the website at https://blueprint-site.github.io/
+
+---
+# For Developers
+
+From now on please merge any changes to the 'develop' branch.
+The 'main' branch is for the production version of the site.
