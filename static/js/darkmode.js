@@ -7,7 +7,7 @@ darkModeToggle.addEventListener('click', () => {
 });
 window.addEventListener('load', function () {
     if (window.localStorage.getItem("darkmode")) {
-        if (window.localStorage.getItem("darkmode") == true) document.body.classList.add('dark-mode');
+        if (window.localStorage.getItem("darkmode") == "true") document.body.classList.add('dark-mode');
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark-mode');
         window.localStorage.setItem('darkmode', true);
