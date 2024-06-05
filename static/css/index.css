@@ -164,55 +164,78 @@ body.dark-mode .site-info h4 {
     color: black;
 }
 
-.discover-addons-line {
-    height: 2px;
-    width: 100%;
-    background-color: var(--container-background);
-    position: relative;
-    opacity: 0.5;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
 
-.home-discover-addons {
-    margin-top: -5px;
-    text-align: center;
-    position: relative;
-}
-
-.home-discover-addons-text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
-}
-
-.addon-list {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 0.3fr;
-    grid-gap: 20px;
-    margin: 20px auto;
-    padding: 0;
-    justify-content: center;
-    max-width: 80vw;
-    align-content: center;
-}
-
-.addon {
-    width: auto;
-    height: auto;
-    border-radius: 2em;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    align-items: left;
-    position: relative;
+.for-creators {
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
-    transition: box-shadow 0.2s linear;
+    justify-content: center;
+    gap: 1em;
 }
-
+.for-creators-discord {
+    background-color: #5865F2;
+    padding: 0.7em;
+    border-radius: 1em;
+    color: white;
+    text-decoration: none;
+    transition: padding 0.1s linear;
+}
+.for-creators-email {
+    background-color: #6C49FC;
+    padding: 0.7em;
+    border-radius: 1em;
+    color: white;
+    text-decoration: none;
+    transition: padding 0.1s linear;
+}
+.for-creators-discord:visited {
+    color: white;
+}
+.for-creators-discord:hover {
+    padding: 0.5em;
+}
+.for-creators-email:visited {
+    color: white;
+}
+.for-creators-email:hover {
+    padding: 0.5em;
+}
+.for-creators-image {
+    width: 10em;
+    border-radius: 1.9em;
+    padding: 0.2em;
+    transition: width 0.1s linear;
+}
+.for-creators-image:hover {
+    width: 11em;
+}
+.for-creators-imagebox {
+    background-color: var(--container-background);
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    border-radius: 1.9em;
+}
+.for-creators-textbox {
+    width: 40em;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 1.9em;
+    background-color: var(--container-background);
+    text-align: left;
+    vertical-align: sub;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.for-creators-header {
+    color: black;
+}
+.for-creators-dsc {
+    color: black;
+    margin-top: -1em;
+    font-weight: lighter;
+}
 .blogpost:link {
     color: rgb(49, 79, 117);
 }
@@ -264,12 +287,11 @@ body.dark-mode .site-info h4 {
 
 .home-more-addons-button {
     display: inline-block;
-    padding: 1vw 1.5vw;
+    padding: 0.4em;
     background-color: #3e76b3;
     color: white;
     text-decoration: none;
-    border-radius: 0.4em;
-    font-size: 1.2em;
+    border-radius: 1.9em;
     transition: 0.2s ease;
 }
 
@@ -279,7 +301,7 @@ body.dark-mode .site-info h4 {
 
 .more-addons-inside-text {
     color: white;
-    font-size: 1.5vw;
+    font-size: 0.9em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -306,4 +328,33 @@ body.dark-mode .site-info h4 {
 .h4-blueprint {
     color: black;
     font-size: 1em;
+}
+.random-addon {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--container-background);
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 1.9em;
+    padding: 20px;
+}
+.random-addon h3, h4, a{
+    color: black;
+}
+.random-addon h4 {
+    font-weight: lighter;
+    margin-top: -1em;
+}
+.random-addon-logo {
+    align-content: center;
+    width: 4em;
+}
+.modloaders {
+    display: inline;
+}
+.random-addon-header {
+    text-align: center;
 }
