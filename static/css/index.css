@@ -178,10 +178,24 @@ body.dark-mode .site-info h4 {
     text-decoration: none;
     transition: padding 0.1s linear;
 }
+.for-creators-email {
+    background-color: #6C49FC;
+    padding: 0.7em;
+    border-radius: 1em;
+    color: white;
+    text-decoration: none;
+    transition: padding 0.1s linear;
+}
 .for-creators-discord:visited {
     color: white;
 }
 .for-creators-discord:hover {
+    padding: 0.5em;
+}
+.for-creators-email:visited {
+    color: white;
+}
+.for-creators-email:hover {
     padding: 0.5em;
 }
 .for-creators-image {
