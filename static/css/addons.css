@@ -65,6 +65,9 @@ body.dark-mode .search-button {
 body.dark-mode .select-dropdown {
     background-color: var(--dark-container-background);
 }
+body.dark-mode .addon-note {
+    color: white;
+}
 
 .addon-list {
     display: grid;
@@ -141,6 +144,17 @@ body.dark-mode .select-dropdown {
     font-size: 0.8em;
     margin-top: 0; /* Adjust margin */
     margin-bottom: 5px; /* Adjust margin */
+}
+
+.addon-note {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative; /* Ensure text appears above the pseudo-element */
+    z-index: 1; /* Ensure text is on top of the pseudo-element */
+    font-size: 0.9em;
+    margin-top: 0; /* Adjust margin */
+    margin-bottom: 5px; /* Adjust margin */
+    font-weight: bolder;
 }
 
 .random-text {
