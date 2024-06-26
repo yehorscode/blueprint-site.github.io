@@ -121,71 +121,79 @@
 
     // Function to process JSON data and populate data boxes
     async function processData() {
-        let versionsArray = []
-        const jsonData = await fetchJsonData();
-        if (jsonData) {
-            const outputDiv = document.getElementById('output');
-            for (const key in jsonData) {
-                const addon = jsonData[key];
-                let modloaders = "";
-                if (addon.addon_categories.includes("forge")) modloaders += `<a class="supports-forge" target="_blank" rel="noopener noreferrer" href="https://files.minecraftforge.net"><img alt="Forge support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/forge_46h.png"></a>`;
-                if (addon.addon_categories.includes("neoforge")) modloaders += `<a class="supports-neoforge" target="_blank" rel="noopener noreferrer" href="https://neoforged.net"><img alt="NeoForge support" height="30" src="/static/neoforge_46h.png"></a>`;
-                if (addon.addon_categories.includes("fabric")) modloaders += `<a class="supports-fabric" target="_blank" rel="noopener noreferrer" href="https://fabricmc.net"><img alt="Fabric support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/fabric_46h.png"></a>`;
-                if (addon.addon_categories.includes("quilt")) modloaders += `<a class="supports-quilt" target="_blank" rel="noopener noreferrer" href="https://quiltmc.org"><img alt="Quilt support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/quilt_46h.png"></a>`;
+    let versionsArray = [];
+    const jsonData = await fetchJsonData();
+    if (jsonData) {
+        const outputDiv = document.getElementById('output');
+        for (const key in jsonData) {
+            const addon = jsonData[key];
+            let modloaders = "";
+            if (addon.addon_categories.includes("forge")) modloaders += `<a class="supports-forge" target="_blank" rel="noopener noreferrer" href="https://files.minecraftforge.net"><img alt="Forge support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/forge_46h.png"></a>`;
+            if (addon.addon_categories.includes("neoforge")) modloaders += `<a class="supports-neoforge" target="_blank" rel="noopener noreferrer" href="https://neoforged.net"><img alt="NeoForge support" height="30" src="/static/neoforge_46h.png"></a>`;
+            if (addon.addon_categories.includes("fabric")) modloaders += `<a class="supports-fabric" target="_blank" rel="noopener noreferrer" href="https://fabricmc.net"><img alt="Fabric support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/fabric_46h.png"></a>`;
+            if (addon.addon_categories.includes("quilt")) modloaders += `<a class="supports-quilt" target="_blank" rel="noopener noreferrer" href="https://quiltmc.org"><img alt="Quilt support" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact-minimal/supported/quilt_46h.png"></a>`;
 
-                let versions = "";
-                for (const version of addon.addon_versions) {
-                    versions += `<span class="addon-version supports-${version.replaceAll(".", "_")}"">${version}</span>`;
-                    if (!versionsArray.includes(version)) versionsArray.push(version);
-                }
-
-                const addonElement = document.createElement('div');
-                addonElement.classList.add('addon'); // Add 'addon' class to the created div
-                addonElement.innerHTML = `
-                    <h3 class="addon-name">${addon.addon_name}</h3>
-                    <img height="100px" width="100px" src="${addon.addon_icon_url}" alt="${addon.addon_name}">
-                    <div class="modloaders">${modloaders}</div>
-                    <div class="addon-versions">${versions}</div>
-                    <p class="addon-description"><b>Downloads:</b> ${addon.addon_downloads}</p>
-                    <p class="addon-description"><b>Description:</b> ${addon.addon_short_descriptions}</p>
-                    <p class="addon-description"><b>Categories:</b> ${addon.addon_categories.join(', ')}</p>
-                    <p class="addon-description"><b>Followers:</b> ${addon.addon_followers}</p>
-                    <p class="addon-description"><b>Created by:</b> ${addon.addon_authors}</p>
-                    <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/" + addon.addon_slug}"><img class="modrinth-download" alt="Download on Modrinth" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_46h.png"></a>
-                `;
-                outputDiv.appendChild(addonElement);
+            let versions = "";
+            for (const version of addon.addon_versions) {
+                versions += `<span class="addon-version supports-${version.replaceAll(".", "_")}"">${version}</span>`;
+                if (!versionsArray.includes(version)) versionsArray.push(version);
             }
 
-            for (const version of versionsArray.sort().reverse()) {
-                const versionElement = document.createElement("li");
-                versionElement.innerHTML = `
-                    <input type="radio" id="${version.replaceAll(".", "_")}" name="version" />
-                    <label for="${version.replaceAll(".", "_")}">${version}</label>
-                `;
-
-                function versionHandler(e) {
-                    versionSelection = this.children[0].id;
-                    console.log(this.children[0].id);
-                    // Click Events
-                    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-                        versionSelectedValue.textContent = this.children[1].textContent;
-                        versionSelect.classList.remove("active");
-                    }
-                    // Key Events
-                    if (e.key === "Enter") {
-                        versionSelectedValue.textContent = this.textContent;
-                        versionSelect.classList.remove("active");
-                    }
-                    searchAddons();
-                }
-
-                versionElement.addEventListener("keyup", versionHandler);
-                versionElement.addEventListener("click", versionHandler);
-
-                document.querySelector(".select-version .select-dropdown").appendChild(versionElement);
+            const addonElement = document.createElement('div');
+            addonElement.classList.add('addon'); // Add 'addon' class to the created div
+            addonElement.innerHTML = `
+                <h3 class="addon-name">${addon.addon_name}</h3>
+                <img height="100px" width="100px" src="${addon.addon_icon_url}" alt="${addon.addon_name}">
+                <div class="modloaders">${modloaders}</div>
+                <div class="addon-versions">${versions}</div>
+                <p class="addon-description"><b>Downloads:</b> ${addon.addon_downloads}</p>
+                <p class="addon-description"><b>Description:</b> ${addon.addon_short_descriptions}</p>
+                <p class="addon-description"><b>Categories:</b> ${addon.addon_categories.join(', ')}</p>
+                <p class="addon-description"><b>Followers:</b> ${addon.addon_followers}</p>
+                <p class="addon-description"><b>Created by:</b> ${addon.addon_authors}</p>
+                <a target="_blank" rel="noopener noreferrer" class="addon-button" href="${"https://modrinth.com/mod/" + addon.addon_slug}"><img class="modrinth-download" alt="Download on Modrinth" height="30" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_46h.png"></a>
+            `;
+            
+            if (addon.note) {
+                const noteElement = document.createElement('p');
+                noteElement.classList.add('addon-note');
+                noteElement.innerHTML = `<b>Note:</b> ${addon.note}`;
+                addonElement.appendChild(noteElement);
             }
+
+            outputDiv.appendChild(addonElement);
+        }
+
+        for (const version of versionsArray.sort().reverse()) {
+            const versionElement = document.createElement("li");
+            versionElement.innerHTML = `
+                <input type="radio" id="${version.replaceAll(".", "_")}" name="version" />
+                <label for="${version.replaceAll(".", "_")}">${version}</label>
+            `;
+
+            function versionHandler(e) {
+                versionSelection = this.children[0].id;
+                console.log(this.children[0].id);
+                // Click Events
+                if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
+                    versionSelectedValue.textContent = this.children[1].textContent;
+                    versionSelect.classList.remove("active");
+                }
+                // Key Events
+                if (e.key === "Enter") {
+                    versionSelectedValue.textContent = this.textContent;
+                    versionSelect.classList.remove("active");
+                }
+                searchAddons();
+            }
+
+            versionElement.addEventListener("keyup", versionHandler);
+            versionElement.addEventListener("click", versionHandler);
+
+            document.querySelector(".select-version .select-dropdown").appendChild(versionElement);
         }
     }
+}
 
     // Call the processData function when the page loads
     window.onload = processData;
